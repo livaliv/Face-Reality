@@ -42,18 +42,4 @@ struct ARModel {
         
     }
     
-    func placeBlueBlock() {
-        let block = MeshResource.generateBox(size: 10)
-        let material = SimpleMaterial(color: .blue, isMetallic: false)
-        let entity = ModelEntity(mesh: block, materials: [material])
-        
-        let anchor = AnchorEntity(.face)
-        anchor.addChild(entity)
-        print("passei aqui")
-        
-        arView.scene.anchors.append(anchor)
-        print("passei aqui2")
-
-    }
-    
 }
