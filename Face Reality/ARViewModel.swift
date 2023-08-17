@@ -29,27 +29,57 @@ class ARViewModel: UIViewController, ObservableObject, ARSessionDelegate {
     }
     
     var isSmiling: Bool {
-        var helper = false
+        var smileHelper = false
         if model.smileLeft > 0.3 || model.smileRight > 0.3 {
-            helper = true
+            smileHelper = true
         }
-        return helper
+        return smileHelper
         
     }
     
     var genuineSmiling: Bool {
-        var funnierHelper = false
+        var genSmileHelper = false
         if model.smileLeft > 0.3 && model.smileRight > 0.3 && model.squintLeft > 0.15 && model.squintRight > 0.15 {
-            funnierHelper = true
+            genSmileHelper = true
         }
-        return funnierHelper
+        return genSmileHelper
     }
     
     var isScowling: Bool {
-        var angryHelper = false
-        if model.sneerLeft > 0.17 && model.sneerRight > 0.17 && model.squintLeft > 0.05 && model.squintRight > 0.05 && model.frownRight > 0.2 && model.frownLeft > 0.2 {
-            angryHelper = true
+        var scowlHelper = false
+        if model.sneerLeft > 0.17 && model.sneerRight > 0.17 && model.squintLeft > 0.05 && model.squintRight > 0.05 && model.shrugLower > 0.3 {
+
+            scowlHelper = true
         }
-        return angryHelper
+        
+        return scowlHelper
+    }
+    
+    var isScared: Bool {
+        var scaredHelper = false
+        if model.wideLeft > 0.3 && model.wideRight > 0.3 {
+            
+            scaredHelper = true
+        }
+        
+        return scaredHelper
+    }
+    var isDisgusted: Bool {
+        var disgustedHelper = false
+        if model.sneerLeft > 0.2 && model.sneerRight > 0.2 {
+            
+            disgustedHelper = true
+        }
+        
+        return disgustedHelper
+    }
+    var isFrowning: Bool {
+        var frownHelper = false
+        if model.browInnerUp > 0.2 || model.mouthRollUpper > 0.2 || model.frownLeft > 0.2 || model.frownRight > 0.2 {
+            
+            frownHelper = true
+        }
+        
+        return frownHelper
     }
 }
