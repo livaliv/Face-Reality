@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A48FD8A2A6AAA3300E71E04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A48FD892A6AAA3300E71E04 /* AppDelegate.swift */; };
-		5A48FD8C2A6AAA3300E71E04 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A48FD8B2A6AAA3300E71E04 /* ContentView.swift */; };
+		5A48FD8C2A6AAA3300E71E04 /* FRContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A48FD8B2A6AAA3300E71E04 /* FRContentView.swift */; };
 		5A48FD8E2A6AAA3300E71E04 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 5A48FD8D2A6AAA3300E71E04 /* Experience.rcproject */; };
 		5A48FD902A6AAA3400E71E04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A48FD8F2A6AAA3400E71E04 /* Assets.xcassets */; };
 		5A48FD932A6AAA3400E71E04 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A48FD922A6AAA3400E71E04 /* Preview Assets.xcassets */; };
@@ -19,12 +19,13 @@
 /* Begin PBXFileReference section */
 		5A48FD862A6AAA3300E71E04 /* Face Reality.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Face Reality.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A48FD892A6AAA3300E71E04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5A48FD8B2A6AAA3300E71E04 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5A48FD8B2A6AAA3300E71E04 /* FRContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRContentView.swift; sourceTree = "<group>"; };
 		5A48FD8D2A6AAA3300E71E04 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		5A48FD8F2A6AAA3400E71E04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A48FD922A6AAA3400E71E04 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5A48FD9D2A6AC7A100E71E04 /* ARModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARModel.swift; sourceTree = "<group>"; };
 		5A48FD9F2A6AC7B200E71E04 /* ARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
+		5A48FDA12A70094700E71E04 /* Face-Reality-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Face-Reality-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +58,10 @@
 		5A48FD882A6AAA3300E71E04 /* Face Reality */ = {
 			isa = PBXGroup;
 			children = (
+				5A48FDA12A70094700E71E04 /* Face-Reality-Info.plist */,
 				5A48FD9D2A6AC7A100E71E04 /* ARModel.swift */,
 				5A48FD9F2A6AC7B200E71E04 /* ARViewModel.swift */,
-				5A48FD8B2A6AAA3300E71E04 /* ContentView.swift */,
+				5A48FD8B2A6AAA3300E71E04 /* FRContentView.swift */,
 				5A48FD892A6AAA3300E71E04 /* AppDelegate.swift */,
 				5A48FD8D2A6AAA3300E71E04 /* Experience.rcproject */,
 				5A48FD8F2A6AAA3400E71E04 /* Assets.xcassets */,
@@ -148,7 +150,7 @@
 			files = (
 				5A48FDA02A6AC7B200E71E04 /* ARViewModel.swift in Sources */,
 				5A48FD9E2A6AC7A100E71E04 /* ARModel.swift in Sources */,
-				5A48FD8C2A6AAA3300E71E04 /* ContentView.swift in Sources */,
+				5A48FD8C2A6AAA3300E71E04 /* FRContentView.swift in Sources */,
 				5A48FD8A2A6AAA3300E71E04 /* AppDelegate.swift in Sources */,
 				5A48FD8E2A6AAA3300E71E04 /* Experience.rcproject in Sources */,
 			);
@@ -279,9 +281,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Face Reality/Preview Content\"";
-				DEVELOPMENT_TEAM = 9569K2P89M;
+				DEVELOPMENT_TEAM = VNH67NDAE6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Face-Reality-Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need your permission to detect facial expressions.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -311,9 +314,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Face Reality/Preview Content\"";
-				DEVELOPMENT_TEAM = 9569K2P89M;
+				DEVELOPMENT_TEAM = VNH67NDAE6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Face-Reality-Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need your permission to detect facial expressions.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
