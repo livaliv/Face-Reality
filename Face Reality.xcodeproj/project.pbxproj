@@ -13,11 +13,10 @@
 		5A48FD932A6AAA3400E71E04 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A48FD922A6AAA3400E71E04 /* Preview Assets.xcassets */; };
 		5A48FD9E2A6AC7A100E71E04 /* ARModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A48FD9D2A6AC7A100E71E04 /* ARModel.swift */; };
 		5A48FDA02A6AC7B200E71E04 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A48FD9F2A6AC7B200E71E04 /* ARViewModel.swift */; };
+		5A5E0D172A98D7D6001BB1E9 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E0D162A98D7D6001BB1E9 /* OnboardingView.swift */; };
 		BC111CFD2A968B5200C7E91B /* InfoPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC111CFC2A968B5200C7E91B /* InfoPopup.swift */; };
-		BC111CFF2A96A70E00C7E91B /* 150x80 foto do músculo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC111CFE2A96A70E00C7E91B /* 150x80 foto do músculo@3x.png */; };
 		BC8302632A9634A300CEEE56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC8302622A9634A300CEEE56 /* Assets.xcassets */; };
 		BC8302652A964D8600CEEE56 /* Emotions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8302642A964D8600CEEE56 /* Emotions.swift */; };
-		BCD490E62A8CF476004B16C6 /* InfoOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD490E52A8CF476004B16C6 /* InfoOverlay.swift */; };
 		BCD490E82A939AF0004B16C6 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD490E72A939AEF004B16C6 /* PopupView.swift */; };
 		BCD490EA2A939BFD004B16C6 /* MusclesExpressionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD490E92A939BFD004B16C6 /* MusclesExpressionModel.swift */; };
 /* End PBXBuildFile section */
@@ -30,11 +29,10 @@
 		5A48FD922A6AAA3400E71E04 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5A48FD9D2A6AC7A100E71E04 /* ARModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARModel.swift; sourceTree = "<group>"; };
 		5A48FD9F2A6AC7B200E71E04 /* ARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
+		5A5E0D162A98D7D6001BB1E9 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		BC111CFC2A968B5200C7E91B /* InfoPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPopup.swift; sourceTree = "<group>"; };
-		BC111CFE2A96A70E00C7E91B /* 150x80 foto do músculo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "150x80 foto do músculo@3x.png"; path = "../../../../../assets-feijoada/150x80 foto do músculo@3x.png"; sourceTree = "<group>"; };
 		BC8302622A9634A300CEEE56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC8302642A964D8600CEEE56 /* Emotions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotions.swift; sourceTree = "<group>"; };
-		BCD490E52A8CF476004B16C6 /* InfoOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoOverlay.swift; sourceTree = "<group>"; };
 		BCD490E72A939AEF004B16C6 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		BCD490E92A939BFD004B16C6 /* MusclesExpressionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesExpressionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,7 +52,6 @@
 			isa = PBXGroup;
 			children = (
 				BC8302622A9634A300CEEE56 /* Assets.xcassets */,
-				BC111CFE2A96A70E00C7E91B /* 150x80 foto do músculo@3x.png */,
 				5A48FD882A6AAA3300E71E04 /* Face Reality */,
 				5A48FD872A6AAA3300E71E04 /* Products */,
 			);
@@ -111,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				5A48FD8B2A6AAA3300E71E04 /* FRContentView.swift */,
+				5A5E0D162A98D7D6001BB1E9 /* OnboardingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -118,7 +116,6 @@
 		BCD490E42A8CF462004B16C6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				BCD490E52A8CF476004B16C6 /* InfoOverlay.swift */,
 				BC8302642A964D8600CEEE56 /* Emotions.swift */,
 				BC111CFC2A968B5200C7E91B /* InfoPopup.swift */,
 				BCD490E72A939AEF004B16C6 /* PopupView.swift */,
@@ -186,7 +183,6 @@
 			files = (
 				BC8302632A9634A300CEEE56 /* Assets.xcassets in Resources */,
 				5A48FD932A6AAA3400E71E04 /* Preview Assets.xcassets in Resources */,
-				BC111CFF2A96A70E00C7E91B /* 150x80 foto do músculo@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,7 +195,7 @@
 			files = (
 				BCD490EA2A939BFD004B16C6 /* MusclesExpressionModel.swift in Sources */,
 				BCD490E82A939AF0004B16C6 /* PopupView.swift in Sources */,
-				BCD490E62A8CF476004B16C6 /* InfoOverlay.swift in Sources */,
+				5A5E0D172A98D7D6001BB1E9 /* OnboardingView.swift in Sources */,
 				5A48FDA02A6AC7B200E71E04 /* ARViewModel.swift in Sources */,
 				5A48FD9E2A6AC7A100E71E04 /* ARModel.swift in Sources */,
 				BC111CFD2A968B5200C7E91B /* InfoPopup.swift in Sources */,
@@ -335,7 +331,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Face Reality/Preview Content\"";
-				DEVELOPMENT_TEAM = 9569K2P89M;
+				DEVELOPMENT_TEAM = VNH67NDAE6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need your permission to detect facial expressions.";
@@ -367,7 +363,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Face Reality/Preview Content\"";
-				DEVELOPMENT_TEAM = 9569K2P89M;
+				DEVELOPMENT_TEAM = VNH67NDAE6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need your permission to detect facial expressions.";
