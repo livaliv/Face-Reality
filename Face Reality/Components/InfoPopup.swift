@@ -40,7 +40,7 @@ struct InfoPopup: View {
                             .padding()
                     }
                 }
-                ScrollView{
+                ScrollView(showsIndicators: false){
                     ForEach(arrayMuscles, id: \.self) { muscle in
                         PopupView(dismissAction: {
                         }, titleText: muscle.muscleName, bodyText: muscle.muscleDescription, isOnboarding: false, buttonLabel: "Fechar")
