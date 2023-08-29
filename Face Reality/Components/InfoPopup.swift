@@ -14,11 +14,11 @@ struct InfoPopup: View {
     
     var body: some View {
         ZStack{
-            Color.black.opacity(0.5).edgesIgnoringSafeArea(.all)
+//            Color.black.opacity(0.5).edgesIgnoringSafeArea(.all)
             
             VStack {
                 Rectangle()
-                    .frame(height: 100)
+                    .frame(height: 50)
                     .foregroundColor(.clear)
 //                    .overlay(
 //                        Text(arrayMuscles[0].expression)
@@ -29,11 +29,14 @@ struct InfoPopup: View {
                 HStack {
                     Spacer()
                     Button(action: {
-                        dismissAction()
+                        withAnimation(.easeInOut(duration: 0.1)) {
+                            dismissAction()
+
+                        }
                     }) {
                         Image(systemName: "x.circle")
-                            .foregroundColor(.white.opacity(0.9))
-                            .font(.system(size: 20))
+                            .foregroundColor(.iconColor.opacity(0.9))
+                            .font(.system(size: 30))
                             .padding()
                     }
                 }
@@ -47,12 +50,14 @@ struct InfoPopup: View {
 
                     
                 }
-                Rectangle()
-                    .frame(height: 100)
-                    .foregroundColor(.clear)
+
             }
 
         }
+//        .mask(LinearGradient(gradient: Gradient(colors: [.clear, .clear, .black, .black, .black, .black, .clear, .clear]), startPoint: .top, endPoint: .bottom))
+        .mask(LinearGradient(gradient: Gradient(colors: [.black, .black, .black, .black, .clear, .clear]), startPoint: .top, endPoint: .bottom))
+
+
 
     }
 }

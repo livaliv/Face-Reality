@@ -57,7 +57,7 @@ class ARViewModel: UIViewController, ObservableObject, ARSessionDelegate {
     
     var isScowling: Bool {
         var scowlHelper = false
-        if model.sneerLeft > 0.17 && model.sneerRight > 0.17 && model.squintLeft > 0.05 && model.squintRight > 0.05 && model.shrugLower > 0.3 {
+        if model.sneerLeft > 0.17 && model.sneerRight > 0.17 && model.squintLeft > 0.05 && model.squintRight > 0.05 || model.shrugLower > 0.3 {
 
             scowlHelper = true
         }

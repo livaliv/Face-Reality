@@ -28,74 +28,121 @@ struct FRContentView : View {
                     
                     
                     
-                    HStack {
+                    HStack(alignment: .top) {
                         Button(action: {
                             
                         }) {
                             Image(systemName: "house.fill")
-                                .foregroundColor(.white.opacity(0.7))
-                                .font(.system(size: 30))
+                                .foregroundColor(.iconColor)
+                                .font(.system(size: 26))
+                                .frame(width: 28, height: 28)
+                                .padding(.horizontal, 11)
+                                .padding(.vertical, 6)
                         }
-                        .padding(.horizontal, 11)
-                        .padding(.vertical, 6)
-                        .background(RoundedRectangle(cornerRadius: 15).fill(.regularMaterial))
-
+                                         
+                        .background(RoundedRectangle(cornerRadius: 12).fill(.regularMaterial))
+                        .shadow(radius: 4, y: 4)
                         
                         Spacer()
                         
                         
+                        //                        Button(action: {
+                        //                            showInfo = true
+                        //                        }) {
+                        //                            Image(systemName: "book.closed.fill")
+                        //                                .foregroundColor(.iconColor)
+                        //                                .font(.system(size: 25))
+                        //                        }
+                        //                        .padding(.horizontal, 14)
+                        //                        .padding(.vertical, 5)
+                        //
+                        //                        .background(RoundedRectangle(cornerRadius: 15).fill(.regularMaterial))
+                        
+                        
+                        //                    }
+                        //                    .padding()
+                        VStack {
+                            Rectangle()
+                                .frame(height: 25)
+                                .foregroundColor(.clear)
+                            
+                            
+                            switch arViewModel.emotions {
+                            case .Joy:
+                                Text(smileChecker())
+                                    .padding(.horizontal, 15)
+                                    .padding(.vertical, 5)
+                                    .foregroundColor(arViewModel.isSmiling ? .green : .red)
+                                    .background(RoundedRectangle(cornerRadius: 8).fill(.regularMaterial).opacity(0.5))
+                                    .shadow(radius: 4, y: 4)
+
+                                
+                            case .Sadness:
+                                Text(sadnessChecker())
+                                    .padding(.horizontal, 15)
+                                    .padding(.vertical, 5)
+                                    .foregroundColor(arViewModel.isFrowning ? .green : .red)
+                                    .background(RoundedRectangle(cornerRadius: 8).fill(.regularMaterial).opacity(0.5))
+                                    .shadow(radius: 4, y: 4)
+
+                            case .Rage:
+                                Text(scowlChecker())
+                                    .padding(.horizontal, 15)
+                                    .padding(.vertical, 5)
+                                    .foregroundColor(arViewModel.isScowling ? .green : .red)
+                                    .background(RoundedRectangle(cornerRadius: 8).fill(.regularMaterial).opacity(0.5))
+                                    .shadow(radius: 4, y: 4)
+
+                                
+                            case .Surprise:
+                                Text(surprisedChecker())
+                                    .padding(.horizontal, 15)
+                                    .padding(.vertical, 5)
+                                    .foregroundColor(arViewModel.isScared ? .green : .red)
+                                    .background(RoundedRectangle(cornerRadius: 8).fill(.regularMaterial).opacity(0.5))
+                                    .shadow(radius: 4, y: 4)
+
+                            case .Disgust:
+                                Text(disgustChecker())
+                                    .padding(.horizontal, 15)
+                                    .padding(.vertical, 5)
+                                    .foregroundColor(arViewModel.isDisgusted ? .green : .red)
+                                    .background(RoundedRectangle(cornerRadius: 8).fill(.regularMaterial).opacity(0.5))
+                                    .shadow(radius: 4, y: 4)
+
+                            }
+                        }
+                        
                         Button(action: {
-                            showInfo = true
+                            withAnimation(.easeInOut(duration: 0.5)) {
+                                showInfo = true
+                            }
                         }) {
                             Image(systemName: "book.closed.fill")
-                                .foregroundColor(.white.opacity(0.7))
-                                .font(.system(size: 25))
+                                .foregroundColor(.iconColor)
+                                .font(.system(size: 26))
+                                .frame(width: 28, height: 28)
+                                .padding(.horizontal, 11)
+                                .padding(.vertical, 6)
+
+                            
                         }
-                        .padding(.horizontal, 14)
-                        .padding(.vertical, 5)
+         
+                        
+                        .background(RoundedRectangle(cornerRadius: 12).fill(.regularMaterial))
+                        .shadow(radius: 4, y: 4)
 
-                        .background(RoundedRectangle(cornerRadius: 15).fill(.regularMaterial))
-
+                        
                         
                     }
                     .padding()
-                    
-                    switch arViewModel.emotions {
-                    case .Joy:
-                        Text(smileChecker())
-                            .padding(.all)
-                            .foregroundColor(arViewModel.isSmiling ? .green : .red)
-                            .background(RoundedRectangle(cornerRadius: 15).fill(.regularMaterial).opacity(0.5))
-                        
-                    case .Sadness:
-                           Text(sadnessChecker())
-                            .padding(.all)
-                            .foregroundColor(arViewModel.isFrowning ? .green : .red)
-                            .background(RoundedRectangle(cornerRadius: 15).fill(.regularMaterial).opacity(0.5))
-                    case .Rage:
-                        Text(scowlChecker())
-                            .padding(.all)
-                            .foregroundColor(arViewModel.isScowling ? .green : .red)
-                            .background(RoundedRectangle(cornerRadius: 15).fill(.regularMaterial).opacity(0.5))
-
-                    case .Surprise:
-                        Text(surprisedChecker())
-                            .padding(.all)
-                            .foregroundColor(arViewModel.isScared ? .green : .red)
-                            .background(RoundedRectangle(cornerRadius: 15).fill(.regularMaterial).opacity(0.5))
-                    case .Disgust:
-                        Text(disgustChecker())
-                            .padding(.all)
-                            .foregroundColor(arViewModel.isDisgusted ? .green : .red)
-                            .background(RoundedRectangle(cornerRadius: 15).fill(.regularMaterial).opacity(0.5))
-                    }
                     
                     Spacer()
                     
                     HStack(spacing: 15) {
                         Button(action: {
                             arViewModel.emotions = .Joy
-             
+                            
                         }) {
                             Image("Smiley face")
                                 .foregroundColor(.white)
@@ -132,29 +179,30 @@ struct FRContentView : View {
                         }
                     }
                     .padding(.all)
+                    .shadow(radius: 4, y: 4)
+
                     
-                    .background(RoundedRectangle(cornerRadius: 20).fill(.regularMaterial).opacity(0.5))
+                    .background(RoundedRectangle(cornerRadius: 20).fill(.regularMaterial).opacity(0.5).shadow(radius: 4, y: 4))
                     
                     
-//                    VStack {
-//                        if showWelcomeScreen == false {
-//
-//                            Button("Go to \(phase == "smiling emotion 😊" ? "scowl emotion 😡" : "smiling emotion 😊")") {
-//                                if (phase == "smiling emotion 😊") {
-//                                    phase = "scowl emotion 😡"
-//                                } else {
-//                                    phase = "smiling emotion 😊"
-//                                }
-//
-//                            }
-//
-//                        }
-//
-//                    }
+                    //                    VStack {
+                    //                        if showWelcomeScreen == false {
+                    //
+                    //                            Button("Go to \(phase == "smiling emotion 😊" ? "scowl emotion 😡" : "smiling emotion 😊")") {
+                    //                                if (phase == "smiling emotion 😊") {
+                    //                                    phase = "scowl emotion 😡"
+                    //                                } else {
+                    //                                    phase = "smiling emotion 😊"
+                    //                                }
+                    //
+                    //                            }
+                    //
+                    //                        }
+                    //
+                    //                    }
                 }
             }
             
-            // Show the welcome screen only if the `showWelcomeScreen` variable is `true`
             if showWelcomeScreen {
                 PopupView(dismissAction: {
                     showWelcomeScreen = false
@@ -162,52 +210,60 @@ struct FRContentView : View {
                 }, titleText: "Welcome to Face Reality!", bodyText: "This experiment will show how our facial expression muscles are directly related to the human ability to show emotion.", isOnboarding: true, buttonLabel: "Começar")
             }
             if showInfo {
-//
-                switch arViewModel.emotions {
-                case .Joy:
-                    InfoPopup(dismissAction: {
-                        showWelcomeScreen = false
-                        showSmilingMuscles = false
-                        showInfo = false
-                    }, arrayMuscles: arViewModel.smileMuscles.muscles)
-//
-//
-                    
-                case .Sadness:
-                    InfoPopup(dismissAction: {
-                        showWelcomeScreen = false
-                        showSmilingMuscles = false
-                        showInfo = false
-                    }, arrayMuscles: arViewModel.sadnessMuscles.muscles)
-
-//
-                case .Rage:
-                    InfoPopup(dismissAction: {
-                        showWelcomeScreen = false
-                        showSmilingMuscles = false
-                        showInfo = false
-    
-                    }, arrayMuscles: arViewModel.angerMuscles.muscles)
-
-//
-                case .Surprise:
-                    InfoPopup(dismissAction: {
-                        showWelcomeScreen = false
-                        showSmilingMuscles = false
-                        showInfo = false
-                    }, arrayMuscles: arViewModel.surpriseMuscles.muscles)
-
-//
-                case .Disgust:
-                    InfoPopup(dismissAction: {
-                        showWelcomeScreen = false
-                        showSmilingMuscles = false
-                        showInfo = false
-                    }, arrayMuscles: arViewModel.disgustMuscles.muscles)
-
-//
+                
+                ZStack{
+                    Color.black.opacity(0.4).edgesIgnoringSafeArea(.all)
+                    //
+                    switch arViewModel.emotions {
+                    case .Joy:
+                        
+                        
+                        InfoPopup(dismissAction: {
+                            showWelcomeScreen = false
+                            showSmilingMuscles = false
+                            showInfo = false
+                        }, arrayMuscles: arViewModel.smileMuscles.muscles)
+                        
+                        
+                        //
+                        //
+                        
+                    case .Sadness:
+                        InfoPopup(dismissAction: {
+                            showWelcomeScreen = false
+                            showSmilingMuscles = false
+                            showInfo = false
+                        }, arrayMuscles: arViewModel.sadnessMuscles.muscles)
+                        
+                        //
+                    case .Rage:
+                        InfoPopup(dismissAction: {
+                            showWelcomeScreen = false
+                            showSmilingMuscles = false
+                            showInfo = false
+                            
+                        }, arrayMuscles: arViewModel.angerMuscles.muscles)
+                        
+                        //
+                    case .Surprise:
+                        InfoPopup(dismissAction: {
+                            showWelcomeScreen = false
+                            showSmilingMuscles = false
+                            showInfo = false
+                        }, arrayMuscles: arViewModel.surpriseMuscles.muscles)
+                        
+                        //
+                    case .Disgust:
+                        InfoPopup(dismissAction: {
+                            showWelcomeScreen = false
+                            showSmilingMuscles = false
+                            showInfo = false
+                        }, arrayMuscles: arViewModel.disgustMuscles.muscles)
+                        
+                        //
+                    }
                 }
-////                
+                ////
             }
             
             if showSmilingMuscles == true {
@@ -252,7 +308,7 @@ struct FRContentView : View {
         else {
             return "Neutral 😐"
         }
-       
+        
     }
     
     func sadnessChecker() -> String {
@@ -269,7 +325,7 @@ struct FRContentView : View {
             return "Surprised! 😮"
         }
         return "Neutral 😐"
-
+        
     }
     
     func disgustChecker() -> String {
