@@ -7,12 +7,6 @@
 
 import Foundation
 
-protocol MusclesExpression {
-    var expressionName: String { get set }
-    var muscleName: String { get set }
-    var muscleDescription: String { get set }
-}
-
 struct Muscle: Hashable {
     let expression: String
     let muscleName: String
@@ -79,13 +73,4 @@ struct SadnessMuscles {
                             Muscle(expression: "Tristeza", muscleName: "Músculos zigomáticos menores", muscleDescription: "Estes músculos estão próximos aos cantos da boca e podem se contrair durante a tristeza, produzindo uma expressão de lábios apertados."),
                             Muscle(expression: "Tristeza", muscleName: "Músculo levantador do ângulo da pálpebra superior", muscleDescription: "Este músculo pode se contrair durante a tristeza, levando a uma leve elevação da pálpebra superior, resultando em uma aparência de olhos mais abertos.")
     ]
-}
-
-struct HappinessMuscle: MusclesExpression {
-    var expressionName: String = "Sorriso genuíno"
-    var muscleName: String = "Músculo zigomático maior"
-    
-    var muscleDescription: String = "Este é o principal músculo envolvido no sorriso. Ele se estende das maçãs do rosto até os cantos da boca e é responsável por levantar os lábios, criando as famosas \"covinhas\" quando sorrimos. "
-    
-    
 }

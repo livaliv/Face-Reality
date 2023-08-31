@@ -10,12 +10,12 @@ import RealityKit
 
 struct FRContentView : View {
     @ObservedObject var arViewModel : ARViewModel = ARViewModel()
-    @State private var showInfo = false    
+    @State private var showInfo = false
+    
     
     var body: some View {
         ZStack {
             ARViewContainer(arViewModel: arViewModel).edgesIgnoringSafeArea(.all)
-            
             
             HStack {
                 VStack(alignment: .center, spacing: 5) {

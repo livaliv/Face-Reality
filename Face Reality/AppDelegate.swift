@@ -6,18 +6,26 @@
 //
 
 import SwiftUI
+
 @main
 struct MyApp: App {
+    @State private var showOnboarding = false
+    
     var body: some Scene {
         WindowGroup {
-            FRContentView()
-                .onAppear {
-                    let hasLaunchedBefore = UserDefaults.standard.bool(forKey: "hasLaunchedBefore")
-                    if !hasLaunchedBefore {
-                        UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
-                        // Show the onboarding view
+            if !showOnboarding {
+                FRContentView()
+                    .onAppear {
+                        let hasLaunchedBefore = UserDefaults.standard.bool(forKey: "hasLaunchedBefore")
+                        if !hasLaunchedBefore {
+                            showOnboarding = true
+                            UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
+                        }
                     }
-                }
+            } else {
+                OnboardingView()
+            }
         }
     }
 }
+
