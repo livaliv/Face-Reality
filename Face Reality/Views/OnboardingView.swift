@@ -9,54 +9,57 @@ import SwiftUI
 import RealityKit
 
 struct OnboardingView: View {
-    @ObservedObject var arViewModel : ARViewModel = ARViewModel()
-    @State var goToMain: Bool = false
+    
     var body: some View {
         
         NavigationView {
-            //NavigationLink(isActive: <#T##Binding<Bool>#>, destination: <#T##() -> View#>, label: T##() -> View)
-            NavigationLink(destination: FRContentView(), isActive: $goToMain, label: {EmptyView()})
+            
             ZStack {
-                ARViewContainer(arViewModel: arViewModel).edgesIgnoringSafeArea(.all).blur(radius: 60)
+                
+                Image("backgroundImage")
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+                
 
-                VStack {
-                    Text("Boas vindas!")
-                        .font(.title)
-                        .foregroundColor(.white)
-                        .padding()
-
-                    Text("Face Reality é um app que te ajuda a entender o funcionamento muscular de acordo com as expressões faciais.")
-                        .font(.body)
-                        .foregroundColor(Color("quasebranco1000"))
-                                   
-                    NavigationLink(
-                        destination: FRContentView(),
-                        label: {
-                            VStack{
-                                Text("Começar")
+                VStack(spacing: 48) {
+                            VStack(spacing:24 ) {
+                                Text("Boas vindas!")
+                                    .font(.title)
+                                    .foregroundColor(Color("azulmarinho1000"))
+                                    .padding(.top, 40)
+                                
+                                Text("Face Reality é um app que te ajuda a entender o funcionamento muscular de acordo com as expressões faciais.")
+                                    .font(.body)
                                     .foregroundColor(Color("azulmarinho1000"))
                                     .padding()
-                                    .background(Color("quasebranco1000"))
-                                    .cornerRadius(20)
+                                
                             }
-                            .frame(maxWidth: 200, maxHeight: 200)
+                            
+                            NavigationLink(
+                                destination: FRContentView(),
+                                label: {
+                                    Text("Começar")
+                                        .padding(.horizontal, 50)
+                                        .padding(.vertical, 12)
+                                        .foregroundColor(Color("quasebranco1000"))
+                                        .background(Color("azulmarinho1000"))
+                                        .cornerRadius(20)
+                                }
+                            )
+                            .padding(.horizontal, 50)
+                            .padding(.bottom, 40)
+                            
                         }
-                    )
-                }
+                .background(RoundedRectangle(cornerRadius: 8).fill(.regularMaterial).opacity(0.9).shadow(radius: 8, y: 8))
+                            .padding(.horizontal, 60)
+                            .padding(.vertical, 250)
+
+                        
+                        
+                  
             }
         }
-
-    }
-    
-    struct ARViewContainer: UIViewRepresentable {
-        var arViewModel: ARViewModel
-        
-        func makeUIView(context: Context) -> ARView {
-            arViewModel.startSessionDelegate()
-            return arViewModel.arView
-        }
-        
-        func updateUIView(_ uiView: ARView, context: Context) {}
         
     }
     
