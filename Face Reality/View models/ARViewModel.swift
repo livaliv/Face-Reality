@@ -92,4 +92,52 @@ class ARViewModel: UIViewController, ObservableObject, ARSessionDelegate {
         
         return frownHelper
     }
+    
+    func smileChecker() -> String {
+        if self.isSmiling {
+            if self.genuineSmiling {
+                return "Sorriso genuíno! 🤩"
+            }
+            else {
+                return "Sorrindo 😊"
+            }
+        }
+        else {
+            return "Neutro 😐"
+        }
+    }
+    
+    func sadnessChecker() -> String {
+        if self.isFrowning {
+            return "Tristeza 😭"
+        }
+        else {
+            return "Neutro 😐"
+        }
+    }
+    
+    func scowlChecker() -> String {
+        if self.isScowling {
+            return "Raiva! 😡"
+        }
+        else {
+            return "Neutro 😐"
+            
+        }
+    }
+    
+    func surprisedChecker() -> String {
+        if self.isScared {
+            return "Surpresa! 😮"
+        }
+        return "Neutro 😐"
+        
+    }
+    
+    func disgustChecker() -> String {
+        if self.isDisgusted {
+            return "Nojo! 🥴"
+        }
+        return "Neutro 😐"
+    }
 }

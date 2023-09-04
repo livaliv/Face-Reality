@@ -49,7 +49,7 @@ struct FRContentView : View {
                             
                             switch arViewModel.emotions {
                             case .Joy:
-                                Text(smileChecker())
+                                Text(arViewModel.smileChecker())
                                     .padding(.horizontal, 15)
                                     .padding(.vertical, 5)
                                     .foregroundColor(arViewModel.isSmiling ? .green : .red)
@@ -58,7 +58,7 @@ struct FRContentView : View {
 
                                 
                             case .Sadness:
-                                Text(sadnessChecker())
+                                Text(arViewModel.sadnessChecker())
                                     .padding(.horizontal, 15)
                                     .padding(.vertical, 5)
                                     .foregroundColor(arViewModel.isFrowning ? .green : .red)
@@ -66,7 +66,7 @@ struct FRContentView : View {
                                     .shadow(radius: 4, y: 4)
 
                             case .Rage:
-                                Text(scowlChecker())
+                                Text(arViewModel.scowlChecker())
                                     .padding(.horizontal, 15)
                                     .padding(.vertical, 5)
                                     .foregroundColor(arViewModel.isScowling ? .green : .red)
@@ -75,7 +75,7 @@ struct FRContentView : View {
 
                                 
                             case .Surprise:
-                                Text(surprisedChecker())
+                                Text(arViewModel.surprisedChecker())
                                     .padding(.horizontal, 15)
                                     .padding(.vertical, 5)
                                     .foregroundColor(arViewModel.isScared ? .green : .red)
@@ -83,7 +83,7 @@ struct FRContentView : View {
                                     .shadow(radius: 4, y: 4)
 
                             case .Disgust:
-                                Text(disgustChecker())
+                                Text(arViewModel.disgustChecker())
                                     .padding(.horizontal, 15)
                                     .padding(.vertical, 5)
                                     .foregroundColor(arViewModel.isDisgusted ? .green : .red)
@@ -134,7 +134,6 @@ struct FRContentView : View {
                                 Image(strokeArray[0] ? "Smiley face" : "smile.stroke")
                                     .foregroundColor(.white)
                                     .font(.system(size: 60))
-    //                                .background(strokeArray[0] ? Color.black : Color.red)
 
                                     
                             }
@@ -142,7 +141,6 @@ struct FRContentView : View {
                                 Text("Sorriso")
                                     .foregroundColor(.white)
                             }
-//                            Text(strokeArray[0] ? "Sorriso" : "")
                         }
                         VStack {
                             Button(action: {
@@ -158,7 +156,6 @@ struct FRContentView : View {
                                 Image(strokeArray[1] ? "Sad face" : "sad.stroke")
                                     .foregroundColor(.white)
                                     .font(.system(size: 60))
-    //                                .background(strokeArray[1] ? Color.black : Color.red)
                                 
 
                             }
@@ -172,7 +169,6 @@ struct FRContentView : View {
                         VStack {
                             Button(action: {
                                 arViewModel.emotions = .Surprise
-    //                            strokeArray = [false, false, false, true, false]
                                 if strokeArray[3] == false {
                                     strokeArray = [false, false, false, true, false]
 
@@ -185,7 +181,6 @@ struct FRContentView : View {
                                 Image(strokeArray[3] ? "Surprised face" : "surprise.stroke")
                                     .foregroundColor(.white)
                                     .font(.system(size: 60))
-//                                    .background(strokeArray[3] ? Color.black : Color.red)
 
                             }
                             if strokeArray[3] {
@@ -210,7 +205,6 @@ struct FRContentView : View {
                                 Image(strokeArray[2] ? "Angry face" : "anger.stroke")
                                     .foregroundColor(.white)
                                     .font(.system(size: 60))
-//                                    .background(strokeArray[2] ? Color.black : Color.red)
 
                             }
                             if strokeArray[2] {
@@ -234,7 +228,6 @@ struct FRContentView : View {
                                 Image(strokeArray[4] ? "Disgust face" : "disgust.stroke")
                                     .foregroundColor(.white)
                                     .font(.system(size: 60))
-//                                    .background(strokeArray[4] ? Color.black : Color.red)
                             }
                             
                             if strokeArray[4] {
@@ -256,46 +249,36 @@ struct FRContentView : View {
                 }
             }
             
-            // Show the welcome screen only if the `showWelcomeScreen` variable is `true`
             if showInfo {
-//
                 switch arViewModel.emotions {
                 case .Joy:
-//                    Color.black.opacity(0.5).edgesIgnoringSafeArea(.all)
 
                     InfoPopup(dismissAction: {
                         showInfo = false
                     }, arrayMuscles: arViewModel.smileMuscles.muscles)
-//
-//
-                    
+                  
                 case .Sadness:
                     InfoPopup(dismissAction: {
                         showInfo = false
                     }, arrayMuscles: arViewModel.sadnessMuscles.muscles)
 
-//
                 case .Rage:
                     InfoPopup(dismissAction: {
                         showInfo = false
     
                     }, arrayMuscles: arViewModel.angerMuscles.muscles)
 
-//
                 case .Surprise:
                     InfoPopup(dismissAction: {
                         showInfo = false
                     }, arrayMuscles: arViewModel.surpriseMuscles.muscles)
 
-//
                 case .Disgust:
                     InfoPopup(dismissAction: {
                         showInfo = false
                     }, arrayMuscles: arViewModel.disgustMuscles.muscles)
 
-//
                 }
-                ////
             }
             
         }
@@ -303,54 +286,7 @@ struct FRContentView : View {
     }
     
     
-    func scowlChecker() -> String {
-        if arViewModel.isScowling {
-            return "Estamos com raiva agora! 😡"
-        }
-        else {
-            return "Neutro 😐"
-            
-        }
-    }
-    
-    func smileChecker() -> String {
-        if arViewModel.isSmiling {
-            if arViewModel.genuineSmiling {
-                return "Sorriso genuíno! 🤩"
-            }
-            else {
-                return "Sorrindo 😊"
-            }
-        }
-        else {
-            return "Neutro 😐"
-        }
-        
-    }
-    
-    func sadnessChecker() -> String {
-        if arViewModel.isFrowning {
-            return "Tristeza 😭"
-        }
-        else {
-            return "Neutro 😐"
-        }
-    }
-    
-    func surprisedChecker() -> String {
-        if arViewModel.isScared {
-            return "Surpresa! 😮"
-        }
-        return "Neutro 😐"
-        
-    }
-    
-    func disgustChecker() -> String {
-        if arViewModel.isDisgusted {
-            return "Nojo! 🥴"
-        }
-        return "Neutro 😐"
-    }
+
     
     struct ARViewContainer: UIViewRepresentable {
         var arViewModel: ARViewModel
