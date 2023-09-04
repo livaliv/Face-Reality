@@ -201,7 +201,6 @@
 				BCD490EA2A939BFD004B16C6 /* MusclesExpressionModel.swift in Sources */,
 				BCD490E82A939AF0004B16C6 /* PopupView.swift in Sources */,
 				BC111D012A98E0F900C7E91B /* Color.swift in Sources */,
-				BCD490E62A8CF476004B16C6 /* InfoOverlay.swift in Sources */,
 				5A5E0D172A98D7D6001BB1E9 /* OnboardingView.swift in Sources */,
 				5A48FDA02A6AC7B200E71E04 /* ARViewModel.swift in Sources */,
 				5A48FD9E2A6AC7A100E71E04 /* ARModel.swift in Sources */,
@@ -338,7 +337,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Face Reality/Preview Content\"";
-				DEVELOPMENT_TEAM = VNH67NDAE6;
+				DEVELOPMENT_TEAM = 9569K2P89M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need your permission to detect facial expressions.";
@@ -370,7 +369,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Face Reality/Preview Content\"";
-				DEVELOPMENT_TEAM = VNH67NDAE6;
+				DEVELOPMENT_TEAM = 9569K2P89M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need your permission to detect facial expressions.";

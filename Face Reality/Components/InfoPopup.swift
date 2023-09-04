@@ -50,6 +50,7 @@ struct InfoPopup: View {
 
                     
                 }
+                .padding(.bottom, 150)
 
             }
 

@@ -11,6 +11,7 @@ import RealityKit
 struct FRContentView : View {
     @ObservedObject var arViewModel : ARViewModel = ARViewModel()
     @State private var showInfo = false
+    @State private var strokeArray = [true, false, false, false, false]
     
     
     var body: some View {
@@ -119,42 +120,129 @@ struct FRContentView : View {
                     Spacer()
                     
                     HStack(spacing: 15) {
-                        Button(action: {
-                            arViewModel.emotions = .Joy
+                        VStack {
+                            Button(action: {
+                                arViewModel.emotions = .Joy
+                                if strokeArray[0] == false {
+                                    strokeArray = [true, false, false, false, false]
+
+                                } else {
+                                    strokeArray[0] = false
+                                }
+                                
+                            }) {
+                                Image(strokeArray[0] ? "Smiley face" : "smile.stroke")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 60))
+    //                                .background(strokeArray[0] ? Color.black : Color.red)
+
+                                    
+                            }
+                            if strokeArray[0] {
+                                Text("Sorriso")
+                                    .foregroundColor(.white)
+                            }
+//                            Text(strokeArray[0] ? "Sorriso" : "")
+                        }
+                        VStack {
+                            Button(action: {
+                                arViewModel.emotions = .Sadness
+                                if strokeArray[1] == false {
+                                    strokeArray = [false, true, false, false, false]
+
+                                } else {
+                                    strokeArray[1] = false
+                                }
+
+                            }) {
+                                Image(strokeArray[1] ? "Sad face" : "sad.stroke")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 60))
+    //                                .background(strokeArray[1] ? Color.black : Color.red)
+                                
+
+                            }
+                            if strokeArray[1] {
+                                Text("Tristeza")
+                                    .foregroundColor(.white)
+
+                            }
+                        }
+                       
+                        VStack {
+                            Button(action: {
+                                arViewModel.emotions = .Surprise
+    //                            strokeArray = [false, false, false, true, false]
+                                if strokeArray[3] == false {
+                                    strokeArray = [false, false, false, true, false]
+
+                                } else {
+                                    strokeArray[3] = false
+                                }
+
+                                
+                            }) {
+                                Image(strokeArray[3] ? "Surprised face" : "surprise.stroke")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 60))
+//                                    .background(strokeArray[3] ? Color.black : Color.red)
+
+                            }
+                            if strokeArray[3] {
+                                Text("Surpresa")
+                                    .foregroundColor(.white)
+
+                            }
+
+                        }
+
+                        VStack {
+                            Button(action: {
+                                arViewModel.emotions = .Rage
+                                if strokeArray[2] == false {
+                                    strokeArray = [false, false, true, false, false]
+
+                                } else {
+                                    strokeArray[2] = false
+                                }
+
+                            }) {
+                                Image(strokeArray[2] ? "Angry face" : "anger.stroke")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 60))
+//                                    .background(strokeArray[2] ? Color.black : Color.red)
+
+                            }
+                            if strokeArray[2] {
+                                Text("Raiva")
+                                    .foregroundColor(.white)
+
+                            }
+
+                        }
+                        VStack {
+                            Button(action: {
+                                arViewModel.emotions = .Disgust
+                                if strokeArray[4] == false {
+                                    strokeArray = [false, false, false, false, true]
+
+                                } else {
+                                    strokeArray[4] = false
+                                }
+
+                            }) {
+                                Image(strokeArray[4] ? "Disgust face" : "disgust.stroke")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 60))
+//                                    .background(strokeArray[4] ? Color.black : Color.red)
+                            }
                             
-                        }) {
-                            Image("Smiley face")
-                                .foregroundColor(.white)
-                                .font(.system(size: 60))
-                        }
-                        Button(action: {
-                            arViewModel.emotions = .Sadness
-                        }) {
-                            Image("Sad face")
-                                .foregroundColor(.white)
-                                .font(.system(size: 60))
-                        }
-                        Button(action: {
-                            arViewModel.emotions = .Rage
-                        }) {
-                            Image("Angry face")
-                                .foregroundColor(.white)
-                                .font(.system(size: 60))
-                        }
-                        Button(action: {
-                            arViewModel.emotions = .Surprise
-                            
-                        }) {
-                            Image("Surprised face")
-                                .foregroundColor(.white)
-                                .font(.system(size: 60))
-                        }
-                        Button(action: {
-                            arViewModel.emotions = .Disgust
-                        }) {
-                            Image("Disgust face")
-                                .foregroundColor(.white)
-                                .font(.system(size: 60))
+                            if strokeArray[4] {
+                                Text("Nojo")
+                                    .foregroundColor(.white)
+
+                            }
+
                         }
                     }
                     .padding(.all)
@@ -164,21 +252,7 @@ struct FRContentView : View {
                     .background(RoundedRectangle(cornerRadius: 20).fill(.regularMaterial).opacity(0.5).shadow(radius: 4, y: 4))
                     
                     
-                    //                    VStack {
-                    //                        if showWelcomeScreen == false {
-                    //
-                    //                            Button("Go to \(phase == "smiling emotion 😊" ? "scowl emotion 😡" : "smiling emotion 😊")") {
-                    //                                if (phase == "smiling emotion 😊") {
-                    //                                    phase = "scowl emotion 😡"
-                    //                                } else {
-                    //                                    phase = "smiling emotion 😊"
-                    //                                }
-                    //
-                    //                            }
-                    //
-                    //                        }
-                    //
-                    //                    }
+                   
                 }
             }
             
