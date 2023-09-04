@@ -44,6 +44,7 @@ struct InfoPopup: View {
                     ForEach(arrayMuscles, id: \.self) { muscle in
                         PopupView(dismissAction: {
                         }, titleText: muscle.muscleName, bodyText: muscle.muscleDescription, isOnboarding: false, buttonLabel: "Fechar")
+
                         
                     }
                     

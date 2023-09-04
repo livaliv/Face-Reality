@@ -61,8 +61,9 @@ struct PopupView: View {
                 }
                 
             }
-            .background(RoundedRectangle(cornerRadius: 15).fill(.regularMaterial))
+            .background(RoundedRectangle(cornerRadius: 15).fill(.regularMaterial).shadow(radius: 4, y: 4))
             .padding()
+
         }
     }
 }

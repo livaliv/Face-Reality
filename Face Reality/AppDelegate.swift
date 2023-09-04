@@ -13,18 +13,18 @@ struct MyApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if !showOnboarding {
-                FRContentView()
-                    .onAppear {
-                        let hasLaunchedBefore = UserDefaults.standard.bool(forKey: "hasLaunchedBefore")
-                        if !hasLaunchedBefore {
-                            showOnboarding = true
-                            UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
-                        }
-                    }
-            } else {
+//            if !showOnboarding {
+//                FRContentView()
+//                    .onAppear {
+//                        let hasLaunchedBefore = UserDefaults.standard.bool(forKey: "hasLaunchedBefore")
+//                        if !hasLaunchedBefore {
+//                            showOnboarding = true
+//                            UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
+//                        }
+//                    }
+//            } else {
                 OnboardingView()
-            }
+//            }
         }
     }
 }

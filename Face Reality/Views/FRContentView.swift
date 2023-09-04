@@ -261,6 +261,8 @@ struct FRContentView : View {
 //
                 switch arViewModel.emotions {
                 case .Joy:
+//                    Color.black.opacity(0.5).edgesIgnoringSafeArea(.all)
+
                     InfoPopup(dismissAction: {
                         showInfo = false
                     }, arrayMuscles: arViewModel.smileMuscles.muscles)
@@ -303,10 +305,10 @@ struct FRContentView : View {
     
     func scowlChecker() -> String {
         if arViewModel.isScowling {
-            return "We're angry now! 😡"
+            return "Estamos com raiva agora! 😡"
         }
         else {
-            return "Neutral 😐"
+            return "Neutro 😐"
             
         }
     }
@@ -314,40 +316,40 @@ struct FRContentView : View {
     func smileChecker() -> String {
         if arViewModel.isSmiling {
             if arViewModel.genuineSmiling {
-                return "Genuine smile! 🤩"
+                return "Sorriso genuíno! 🤩"
             }
             else {
-                return "Smiling 😊"
+                return "Sorrindo 😊"
             }
         }
         else {
-            return "Neutral 😐"
+            return "Neutro 😐"
         }
         
     }
     
     func sadnessChecker() -> String {
         if arViewModel.isFrowning {
-            return "Sadness 😭"
+            return "Tristeza 😭"
         }
         else {
-            return "Neutral 😐"
+            return "Neutro 😐"
         }
     }
     
     func surprisedChecker() -> String {
         if arViewModel.isScared {
-            return "Surprised! 😮"
+            return "Surpresa! 😮"
         }
-        return "Neutral 😐"
+        return "Neutro 😐"
         
     }
     
     func disgustChecker() -> String {
         if arViewModel.isDisgusted {
-            return "Disgusted!"
+            return "Nojo! 🥴"
         }
-        return "Neutral 😐"
+        return "Neutro 😐"
     }
     
     struct ARViewContainer: UIViewRepresentable {
