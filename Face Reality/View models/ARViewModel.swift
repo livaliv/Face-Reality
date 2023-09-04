@@ -14,7 +14,7 @@ class ARViewModel: UIViewController, ObservableObject, ARSessionDelegate {
     @Published private var model : ARModel = ARModel()
     @Published var emotions: Emotions = .Joy
     @Published var smileMuscles: SmileMuscles = SmileMuscles()
-    @Published var genuineSmileMuscles = GenuineSmileMuscles()
+//    @Published var genuineSmileMuscles = GenuineSmileMuscles()
     @Published var sadnessMuscles: SadnessMuscles = SadnessMuscles()
     @Published var angerMuscles: AngerMuscles = AngerMuscles()
     @Published var surpriseMuscles: SurpriseMuscles = SurpriseMuscles()
