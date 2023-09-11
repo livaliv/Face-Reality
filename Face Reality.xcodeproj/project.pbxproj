@@ -337,7 +337,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Face Reality/Preview Content\"";
-				DEVELOPMENT_TEAM = 9569K2P89M;
+				DEVELOPMENT_TEAM = VNH67NDAE6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need your permission to detect facial expressions.";
@@ -368,7 +368,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Face Reality/Preview Content\"";
-				DEVELOPMENT_TEAM = 9569K2P89M;
+				DEVELOPMENT_TEAM = VNH67NDAE6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need your permission to detect facial expressions.";
