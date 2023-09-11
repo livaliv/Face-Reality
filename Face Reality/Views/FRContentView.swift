@@ -12,6 +12,9 @@ struct FRContentView : View {
     @ObservedObject var arViewModel : ARViewModel = ARViewModel()
     @State private var showInfo = false
     @State private var strokeArray = [true, false, false, false, false]
+    @EnvironmentObject private var coordinator: Coordinator
+    @Environment(\.dismiss) private var dismiss
+    @State private var reloadView = false
     
     
     var body: some View {
@@ -24,8 +27,22 @@ struct FRContentView : View {
                     
                     
                     HStack(alignment: .top) {
+                        
+//                        NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true), label: {
+//                                                    Image(systemName: "house.fill")
+//                                                        .foregroundColor(.iconColor)
+//                                                        .font(.system(size: 26))
+//                                                        .frame(width: 28, height: 28)
+//                                                        .padding(.horizontal, 11)
+//                                                        .padding(.vertical, 6)
+//                                                        .background(RoundedRectangle(cornerRadius: 12).fill(.regularMaterial))
+//                                                        .shadow(radius: 4, y: 4)
+//                                                })
                         Button(action: {
-                            
+                            dismiss()
+                            print("morri")
+//                            arViewModel.pauseSessionDelegate()
+                            coordinator.gotoBackOnepage()
                         }) {
                             Image(systemName: "house.fill")
                                 .foregroundColor(.iconColor)
@@ -282,23 +299,37 @@ struct FRContentView : View {
             }
             
         }
+        .onAppear {
+            arViewModel.startSessionDelegate()
+        }
         
     }
+//        .onAppear {
+//            self.reloadView = true
+//        }
     
     
 
     
-    struct ARViewContainer: UIViewRepresentable {
-        var arViewModel: ARViewModel
-        
-        func makeUIView(context: Context) -> ARView {
-            arViewModel.startSessionDelegate()
-            return arViewModel.arView
-        }
-        
-        func updateUIView(_ uiView: ARView, context: Context) {}
-        
-    }
+//    struct ARViewContainer2: UIViewRepresentable {
+//        @ObservedObject var arViewModel: ARViewModel
+//        @Binding var reloadView: Bool
+//
+//        func makeUIView(context: Context) -> ARView {
+////            arViewModel.startSessionDelegate()
+//////            let configuration = ARWorldTrackingConfiguration()
+//////            arViewModel.arView.session.run(configuration)
+////            print("construi")
+//                return arViewModel.arView
+//            
+//        }
+//        
+//
+//        func updateUIView(_ uiView: ARView, context: Context) {
+//            print("atualizei")
+//        }
+//
+//    }
     
 #if DEBUG
     struct ContentView_Previews : PreviewProvider {
@@ -307,5 +338,16 @@ struct FRContentView : View {
         }
     }
 #endif
+    
+}
+struct ARViewContainer: UIViewRepresentable {
+    var arViewModel: ARViewModel
+    
+    func makeUIView(context: Context) -> ARView {
+        arViewModel.startSessionDelegate()
+        return arViewModel.arView
+    }
+    
+    func updateUIView(_ uiView: ARView, context: Context) {}
     
 }

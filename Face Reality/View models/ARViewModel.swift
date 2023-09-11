@@ -28,6 +28,10 @@ class ARViewModel: UIViewController, ObservableObject, ARSessionDelegate {
         
     }
     
+    func pauseSessionDelegate() {
+        model.arView.session.pause()
+    }
+    
     func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
         if let faceAnchor = anchors.first as? ARFaceAnchor {
             model.update(faceAnchor: faceAnchor)

@@ -23,8 +23,9 @@ struct MyApp: App {
 //                        }
 //                    }
 //            } else {
-                OnboardingView()
+//                OnboardingView()
 //            }
+            AppNavigation()
         }
     }
 }

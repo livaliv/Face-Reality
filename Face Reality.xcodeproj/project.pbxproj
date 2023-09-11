@@ -18,6 +18,10 @@
 		BC111D012A98E0F900C7E91B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC111D002A98E0F900C7E91B /* Color.swift */; };
 		BC8302632A9634A300CEEE56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC8302622A9634A300CEEE56 /* Assets.xcassets */; };
 		BC8302652A964D8600CEEE56 /* Emotions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8302642A964D8600CEEE56 /* Emotions.swift */; };
+		BCAB623A2AABB22D00F687B5 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB62392AABB22D00F687B5 /* MenuView.swift */; };
+		BCAB623D2AABB90C00F687B5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB623C2AABB90C00F687B5 /* Coordinator.swift */; };
+		BCAB623F2AABB94B00F687B5 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB623E2AABB94B00F687B5 /* Route.swift */; };
+		BCAB62412AABB9FC00F687B5 /* AppNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB62402AABB9FC00F687B5 /* AppNavigation.swift */; };
 		BCD490E82A939AF0004B16C6 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD490E72A939AEF004B16C6 /* PopupView.swift */; };
 		BCD490EA2A939BFD004B16C6 /* MusclesExpressionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD490E92A939BFD004B16C6 /* MusclesExpressionModel.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +40,10 @@
 		BC111D022AA5F56300C7E91B /* Face Reality.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Face Reality.xctestplan"; sourceTree = "<group>"; };
 		BC8302622A9634A300CEEE56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC8302642A964D8600CEEE56 /* Emotions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotions.swift; sourceTree = "<group>"; };
+		BCAB62392AABB22D00F687B5 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		BCAB623C2AABB90C00F687B5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		BCAB623E2AABB94B00F687B5 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		BCAB62402AABB9FC00F687B5 /* AppNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigation.swift; sourceTree = "<group>"; };
 		BCD490E72A939AEF004B16C6 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		BCD490E92A939BFD004B16C6 /* MusclesExpressionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesExpressionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +100,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		BCAB623B2AABB85A00F687B5 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				BCAB623C2AABB90C00F687B5 /* Coordinator.swift */,
+				BCAB623E2AABB94B00F687B5 /* Route.swift */,
+				BCAB62402AABB9FC00F687B5 /* AppNavigation.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		BCD490E02A8CF3D8004B16C6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,7 +131,9 @@
 			isa = PBXGroup;
 			children = (
 				5A48FD8B2A6AAA3300E71E04 /* FRContentView.swift */,
+				BCAB62392AABB22D00F687B5 /* MenuView.swift */,
 				5A5E0D162A98D7D6001BB1E9 /* OnboardingView.swift */,
+				BCAB623B2AABB85A00F687B5 /* Navigation */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,14 +219,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCD490EA2A939BFD004B16C6 /* MusclesExpressionModel.swift in Sources */,
+				BCAB623A2AABB22D00F687B5 /* MenuView.swift in Sources */,
+				BCAB623D2AABB90C00F687B5 /* Coordinator.swift in Sources */,
 				BCD490E82A939AF0004B16C6 /* PopupView.swift in Sources */,
 				BC111D012A98E0F900C7E91B /* Color.swift in Sources */,
+				BCAB623F2AABB94B00F687B5 /* Route.swift in Sources */,
 				5A5E0D172A98D7D6001BB1E9 /* OnboardingView.swift in Sources */,
 				5A48FDA02A6AC7B200E71E04 /* ARViewModel.swift in Sources */,
 				5A48FD9E2A6AC7A100E71E04 /* ARModel.swift in Sources */,
 				BC111CFD2A968B5200C7E91B /* InfoPopup.swift in Sources */,
 				5A48FD8C2A6AAA3300E71E04 /* FRContentView.swift in Sources */,
 				5A48FD8A2A6AAA3300E71E04 /* AppDelegate.swift in Sources */,
+				BCAB62412AABB9FC00F687B5 /* AppNavigation.swift in Sources */,
 				BC8302652A964D8600CEEE56 /* Emotions.swift in Sources */,
 				5A48FD8E2A6AAA3300E71E04 /* Experience.rcproject in Sources */,
 			);
