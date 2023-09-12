@@ -23,7 +23,7 @@ struct MyApp: App {
 //                        }
 //                    }
 //            } else {
-                OnboardingView()
+                ContentView()
 //            }
         }
     }

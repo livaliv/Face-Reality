@@ -10,8 +10,9 @@ import SwiftUI
 struct PopupView: View {
     var dismissAction: () -> Void
     let titleText: String
+    let subtitleText: String?
     let bodyText: String
-    let isOnboarding: Bool
+    let isReference: Bool
     let buttonLabel: String
     
     
@@ -22,14 +23,47 @@ struct PopupView: View {
             
             VStack(alignment: .leading, spacing: 2) {
 //                Text("Welcome to Face Reality!")
-                Text(titleText)
-                    .font(.title2)
-                    .fontWeight(.bold)
-//                    .padding(50)
-                    .padding()
+                HStack {
+                    Text(titleText)
+                        .font(.title2)
+                        .fontWeight(.bold)
+    //                    .padding(50)
+                        .padding()
+                    
+                    Spacer()
+                    
+                    if isReference {
+                        Button(action: {
+                            withAnimation(.easeInOut(duration: 0.1)) {
+                                dismissAction()
+
+                            }
+                        }) {
+                            Image(systemName: "x.circle")
+                                .foregroundColor(.iconColor.opacity(0.9))
+                                .font(.system(size: 24))
+                                .padding()
+                        }
+    //                    .font(.title2)
+                        .padding()
+
+        //                .padding(.horizontal, 40)
+        //                .padding(.vertical, 20)
+                        .background(RoundedRectangle(cornerRadius: 15).fill(.regularMaterial))
+        //                .padding(.bottom, 40)
+                    }
+                }
                 
-//                Text("This experiment will show how our facial expression muscles are directly related to the human ability to show emotion.")
                 
+                if isReference {
+                    
+                    Text(subtitleText ?? "")
+                        .font(.body)
+                        .padding()
+                        .fixedSize(horizontal: false, vertical: true)
+                    
+                    
+                }
                 ScrollView {
                     VStack {
                         Text(bodyText)
@@ -42,23 +76,18 @@ struct PopupView: View {
                         
                     }
                 }
+                .padding(.bottom)
                 
-                Image("MuscleIlustration")
-                    .padding()
-
                
-                if isOnboarding {
-                    Button(buttonLabel) {
-                        dismissAction()
-                    }
-                    .font(.title2)
-                    .padding()
+                
+                if isReference == false  {
+                    Image("MuscleIlustration")
+                        .padding()
 
-    //                .padding(.horizontal, 40)
-    //                .padding(.vertical, 20)
-                    .background(RoundedRectangle(cornerRadius: 15).fill(.regularMaterial))
-    //                .padding(.bottom, 40)
                 }
+               
+               
+                
                 
             }
             .background(RoundedRectangle(cornerRadius: 15).fill(.regularMaterial).shadow(radius: 4, y: 4))
