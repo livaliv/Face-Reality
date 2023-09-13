@@ -93,7 +93,9 @@ class ARViewModel: UIViewController, ObservableObject, ARSessionDelegate {
         return frownHelper
     }
     
-    func smileChecker() -> String {
+    
+    
+    func smileChecker(isSmiling: Bool) -> String {
         if self.isSmiling {
             if self.genuineSmiling {
                 return "Sorriso genuíno! 🤩"

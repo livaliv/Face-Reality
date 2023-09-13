@@ -16,7 +16,13 @@
     }
   },
   "testTargets" : [
-
+    {
+      "target" : {
+        "containerPath" : "container:Face Reality.xcodeproj",
+        "identifier" : "BC016D322AB1DF1500C396CB",
+        "name" : "Face RealityTests"
+      }
+    }
   ],
   "version" : 1
 }

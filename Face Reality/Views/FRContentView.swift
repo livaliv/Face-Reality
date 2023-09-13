@@ -49,7 +49,7 @@ struct FRContentView : View {
                             
                             switch arViewModel.emotions {
                             case .Joy:
-                                Text(arViewModel.smileChecker())
+                                Text(arViewModel.smileChecker(isSmiling: arViewModel.isSmiling))
                                     .padding(.horizontal, 15)
                                     .padding(.vertical, 5)
                                     .foregroundColor(arViewModel.isSmiling ? .green : .red)
