@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "levantadorLabioSuperiorAsaNariz.png",
+      "filename" : "levantadorAnguloBoca.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "levantadorLabioSuperiorAsaNariz@2x.png",
+      "filename" : "levantadorAnguloBoca@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "levantadorLabioSuperiorAsaNariz@3x.png",
+      "filename" : "levantadorAnguloBoca@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

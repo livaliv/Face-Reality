@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "levantadorLabio.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "levantadorLabio@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "150x80 foto do músculo@3x.png",
+      "filename" : "levantadorLabio@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
