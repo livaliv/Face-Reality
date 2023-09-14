@@ -31,13 +31,16 @@ struct ContentView: View {
     @ObservedObject var arViewModel : ARViewModel = ARViewModel()
     @EnvironmentObject private var coordinator: Coordinator
     @Environment(\.dismiss) private var dismiss
+    @State var cameraActive = false
 
     
     var body: some View {
 //        NavigationStack {
             ZStack {
-                ARViewContainer(arViewModel: arViewModel).edgesIgnoringSafeArea(.all).blur(radius: 40)
                 
+                if cameraActive {
+                    ARViewContainer(arViewModel: arViewModel).edgesIgnoringSafeArea(.all).blur(radius: 40)
+                }
             
                 
                 VStack (spacing: 239) {
@@ -103,7 +106,7 @@ struct ContentView: View {
                                 
                                 Button("Começar", action:{
                                     coordinator.goToARview()
-//                                    dismiss()
+                                    dismiss()
 
                                 })
                                     .buttonStyle(ButtonStyleSelect())
@@ -126,6 +129,11 @@ struct ContentView: View {
                             }
                         }
                         
+                    }
+                }
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        self.cameraActive = true
                     }
                 }
             }
