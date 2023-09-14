@@ -42,7 +42,7 @@ struct FRContentView : View {
                             dismiss()
                             print("morri")
 //                            arViewModel.pauseSessionDelegate()
-                            coordinator.gotoBackOnepage()
+                            coordinator.goToMenu()
                         }) {
                             Image(systemName: "house.fill")
                                 .foregroundColor(.iconColor)
