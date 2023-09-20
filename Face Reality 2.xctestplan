@@ -1,0 +1,22 @@
+{
+  "configurations" : [
+    {
+      "id" : "270C423B-4CC9-4CD8-8BDD-A9D40197D73D",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Face Reality.xcodeproj",
+      "identifier" : "5A48FD852A6AAA3300E71E04",
+      "name" : "Face Reality"
+    }
+  },
+  "testTargets" : [
+
+  ],
+  "version" : 1
+}

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import RealityKit
+import Firebase
 
 struct FRContentView : View {
     @ObservedObject var arViewModel : ARViewModel = ARViewModel()
@@ -25,6 +26,7 @@ struct FRContentView : View {
                     
                     HStack(alignment: .top) {
                         Button(action: {
+                                Analytics.logEvent("house_click", parameters: nil)
                             
                         }) {
                             Image(systemName: "house.fill")

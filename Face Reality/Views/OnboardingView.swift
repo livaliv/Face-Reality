@@ -28,6 +28,7 @@ struct OnboardingView: View {
                                     .font(.title)
                                     .foregroundColor(Color.navyBlue)
                                     .padding(.top, 40)
+
                                 
                                 Text("Face Reality é um app que te ajuda a entender o funcionamento muscular de acordo com as expressões faciais.")
                                     .font(.body)
